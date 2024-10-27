@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from lib.base import driver
+from lib.credentials import facebook_email, facebook_pass
 
 # Переходим на сайт
 driver.get("https://www.facebook.com/")
@@ -16,12 +17,12 @@ try:
 
     # Находим поле ввода логина и вводим логин
     driver.find_element(
-        By.CSS_SELECTOR, 'input[data-testid="royal_email"]').send_keys("111@gmail.com")
+        By.CSS_SELECTOR, 'input[data-testid="royal_email"]').send_keys(facebook_email)
     print("Логин ввели")
 
     # Находим поле ввода пароля и вводим пароль
     driver.find_element(
-        By.CSS_SELECTOR, 'input[data-testid="royal_pass"]').send_keys("ii!L7C@_nC/i?xV")
+        By.CSS_SELECTOR, 'input[data-testid="royal_pass"]').send_keys(facebook_pass)
     print("Пароль ввели")
 
     # Нажимаем кнопку "Вход"
